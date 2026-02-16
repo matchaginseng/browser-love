@@ -43,7 +43,7 @@ export default function NavigationBar() {
           onClick={() => dispatch({ type: "GO_HOME" })}
           aria-label="Home"
         >
-          &#8962;
+          &#9825;
         </button>
       </div>
       <UrlBar keywords={keywords} />
@@ -57,7 +57,7 @@ const styles: Record<string, React.CSSProperties> = {
     alignItems: "center",
     gap: "8px",
     padding: "6px 8px",
-    background: "#35363a",
+    background: "#4a2840",
   },
   buttons: {
     display: "flex",
@@ -69,7 +69,7 @@ const styles: Record<string, React.CSSProperties> = {
     height: "32px",
     border: "none",
     background: "transparent",
-    color: "#e8eaed",
+    color: "#f5e0e8",
     fontSize: "18px",
     cursor: "pointer",
     borderRadius: "50%",
@@ -79,7 +79,7 @@ const styles: Record<string, React.CSSProperties> = {
     fontFamily: "inherit",
   },
   navBtnDisabled: {
-    color: "#5f6368",
+    color: "#5c3350",
     cursor: "default",
   },
 };

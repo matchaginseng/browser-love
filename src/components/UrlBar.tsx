@@ -9,7 +9,7 @@ export default function UrlBar({ keywords }: UrlBarProps) {
 
   return (
     <div style={styles.bar}>
-      <span style={styles.lockIcon}>&#128274;</span>
+      <span style={styles.lockIcon}>{"\u2665"}</span>
       <input
         type="text"
         readOnly
@@ -26,14 +26,14 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     alignItems: "center",
     flex: 1,
-    background: "#202124",
+    background: "#2d1520",
     borderRadius: "24px",
     padding: "6px 16px",
     gap: "8px",
   },
   lockIcon: {
     fontSize: "12px",
-    color: "#9aa0a6",
+    color: "#f8a4c0",
     flexShrink: 0,
   },
   input: {
@@ -43,6 +43,6 @@ const styles: Record<string, React.CSSProperties> = {
     flex: 1,
     fontSize: "14px",
     fontFamily: "inherit",
-    color: "#e8eaed",
+    color: "#f5e0e8",
   },
 };

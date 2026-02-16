@@ -1,20 +1,20 @@
 :root {
-  /* Chrome Color Palette */
-  --chrome-bg: #202124;
-  --chrome-tab-bg: #292a2d;
-  --chrome-tab-active: #35363a;
-  --chrome-tab-hover: #313235;
-  --chrome-toolbar: #35363a;
-  --chrome-url-bg: #202124;
-  --chrome-url-focus: #1a1a1d;
-  --chrome-text: #e8eaed;
-  --chrome-text-secondary: #9aa0a6;
-  --chrome-border: #3c4043;
-  --chrome-accent: #8ab4f8;
+  /* Valentine Pink Chrome Palette */
+  --chrome-bg: #2d1520;
+  --chrome-tab-bg: #3a1e2d;
+  --chrome-tab-active: #4a2840;
+  --chrome-tab-hover: #422436;
+  --chrome-toolbar: #4a2840;
+  --chrome-url-bg: #2d1520;
+  --chrome-url-focus: #251018;
+  --chrome-text: #f5e0e8;
+  --chrome-text-secondary: #c4899e;
+  --chrome-border: #5c3350;
+  --chrome-accent: #f8a4c0;
   --chrome-white: #ffffff;
-  --chrome-content-bg: #ffffff;
-  --chrome-link: #1a73e8;
-  --chrome-link-hover: #1558b0;
+  --chrome-content-bg: #fff5f8;
+  --chrome-link: #eb80ff;
+  --chrome-link-hover: #d966f0;
 
   font-family: var(--font-familjen), -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, sans-serif;
@@ -32,11 +32,11 @@ body {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  background: #1a1a1a;
-  color: #202124;
+  background: #1a0d12;
+  color: #3d1a2a;
 }
 
-/* ─── Scrollbar (Chrome-style thin) ─── */
+/* ─── Scrollbar ─── */
 
 ::-webkit-scrollbar {
   width: 8px;
@@ -48,12 +48,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #c1c1c1;
+  background: #e0b0c0;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a8a8a8;
+  background: #d4899e;
 }
 
 /* ─── Link Styles ─── */

@@ -29,7 +29,7 @@ const styles: Record<string, React.CSSProperties> = {
   desktop: {
     width: "100vw",
     height: "100vh",
-    background: "#1a1a1a",
+    background: "#1a0d12",
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
@@ -40,7 +40,7 @@ const styles: Record<string, React.CSSProperties> = {
     height: "90%",
     maxWidth: "1100px",
     maxHeight: "800px",
-    background: "#202124",
+    background: "#2d1520",
     borderRadius: "8px",
     overflow: "hidden",
     display: "flex",

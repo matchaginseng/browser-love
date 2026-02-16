@@ -24,6 +24,7 @@ export default function Tab({ tab, isActive }: TabProps) {
         ...(isActive ? styles.activeTab : styles.inactiveTab),
       }}
     >
+      <span style={styles.heart}>{isActive ? "\u2665" : "\u2661"}</span>
       <span style={styles.tabTitle}>{title}</span>
       <button
         onClick={(e) => {
@@ -47,7 +48,7 @@ const styles: Record<string, React.CSSProperties> = {
     paddingTop: "6px",
     paddingRight: "12px",
     paddingBottom: "6px",
-    paddingLeft: "12px",
+    paddingLeft: "10px",
     cursor: "pointer",
     fontSize: "12px",
     maxWidth: "220px",
@@ -57,12 +58,17 @@ const styles: Record<string, React.CSSProperties> = {
     transition: "background 0.1s",
   },
   activeTab: {
-    background: "#35363a",
-    color: "#e8eaed",
+    background: "#4a2840",
+    color: "#f5e0e8",
   },
   inactiveTab: {
     background: "transparent",
-    color: "#9aa0a6",
+    color: "#c4899e",
+  },
+  heart: {
+    fontSize: "10px",
+    flexShrink: 0,
+    color: "#f8a4c0",
   },
   tabTitle: {
     overflow: "hidden",

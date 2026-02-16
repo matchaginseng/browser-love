@@ -17,7 +17,7 @@ export default function BottomBar() {
         <span style={styles.toggleArrow}>
           {state.bottomBarOpen ? "\u25BC" : "\u25B2"}
         </span>
-        <span>Your Story</span>
+        <span>{"\u2665"} Your Story</span>
       </button>
       {state.bottomBarOpen && (
         <div style={styles.bar}>
@@ -51,9 +51,9 @@ export default function BottomBar() {
 const styles: Record<string, React.CSSProperties> = {
   toggle: {
     width: "100%",
-    background: "#f8f9fa",
+    background: "#fef0f4",
     border: "none",
-    borderTop: "1px solid #dadce0",
+    borderTop: "1px solid #f0c4d4",
     padding: "6px 16px",
     cursor: "pointer",
     fontSize: "12px",
@@ -62,14 +62,14 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     alignItems: "center",
     gap: "6px",
-    color: "#5f6368",
+    color: "#a0607a",
   },
   toggleArrow: {
     fontSize: "8px",
   },
   bar: {
-    background: "#ffffff",
-    borderTop: "1px solid #dadce0",
+    background: "#fff5f8",
+    borderTop: "1px solid #f0c4d4",
     maxHeight: "160px",
     overflow: "auto",
   },
@@ -79,18 +79,18 @@ const styles: Record<string, React.CSSProperties> = {
   story: {
     fontSize: "14px",
     lineHeight: 1.8,
-    color: "#202124",
+    color: "#807078",
   },
   filledSlot: {
-    background: "#e8f0fe",
-    color: "#1a73e8",
+    background: "#fce0e8",
+    color: "#eb80ff",
     padding: "1px 6px",
     borderRadius: "4px",
     fontWeight: 600,
   },
   unfilledSlot: {
-    background: "#f1f3f4",
-    color: "#9aa0a6",
+    background: "#f5e0e8",
+    color: "#b8a0aa",
     padding: "1px 6px",
     borderRadius: "4px",
     fontStyle: "italic",

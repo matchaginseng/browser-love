@@ -19,6 +19,6 @@ const styles: Record<string, React.CSSProperties> = {
   viewport: {
     flex: 1,
     overflow: "auto",
-    background: "#ffffff",
+    background: "#fefefe",
   },
 };

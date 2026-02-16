@@ -27,9 +27,9 @@ export default function TabBar() {
         </button>
       </div>
       <div style={styles.windowControls}>
-        <span style={styles.windowBtn}>&#8211;</span>
-        <span style={styles.windowBtn}>&#9723;</span>
-        <span style={{ ...styles.windowBtn, ...styles.closeBtn }}>&#10005;</span>
+        <span style={{ ...styles.windowBtn, background: "#e8a0b4" }}></span>
+        <span style={{ ...styles.windowBtn, background: "#c4899e" }}></span>
+        <span style={{ ...styles.windowBtn, background: "#f8a4c0" }}></span>
       </div>
     </div>
   );
@@ -39,14 +39,13 @@ const styles: Record<string, React.CSSProperties> = {
   tabBar: {
     display: "flex",
     alignItems: "center",
-    background: "#202124",
+    background: "#2d1520",
     paddingTop: "8px",
     paddingRight: "8px",
     paddingBottom: "0",
     paddingLeft: "8px",
     minHeight: "40px",
-    WebkitAppRegion: "drag" as unknown as string,
-  } as React.CSSProperties,
+  },
   tabList: {
     display: "flex",
     alignItems: "flex-end",
@@ -59,7 +58,7 @@ const styles: Record<string, React.CSSProperties> = {
     height: "28px",
     border: "none",
     background: "transparent",
-    color: "#9aa0a6",
+    color: "#c4899e",
     fontSize: "18px",
     cursor: "pointer",
     borderRadius: "50%",
@@ -81,14 +80,7 @@ const styles: Record<string, React.CSSProperties> = {
     width: "12px",
     height: "12px",
     borderRadius: "50%",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "0",
+    display: "inline-block",
     cursor: "default",
-    background: "#5f6368",
-  },
-  closeBtn: {
-    background: "#5f6368",
   },
 };

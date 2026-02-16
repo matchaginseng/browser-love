@@ -88,7 +88,7 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
     case "visitor_counter":
       return (
         <div style={styles.visitorCounter}>
-          <span style={styles.counterLabel}>Visitors: </span>
+          <span style={styles.counterLabel}>{"\u2665"} Visitors: </span>
           <span style={styles.counterNumber}>
             {block.count.toLocaleString()}
           </span>
@@ -108,26 +108,29 @@ const styles: Record<string, React.CSSProperties> = {
   paragraph: {
     marginBottom: "12px",
     lineHeight: 1.7,
-    color: "#202124",
+    color: "#807078",
     fontSize: "14px",
   },
   h1: {
-    fontSize: "24px",
+    fontSize: "28px",
+    fontFamily: "var(--font-heading), Georgia, serif",
     fontWeight: 400,
     marginBottom: "16px",
-    color: "#202124",
+    color: "#6b3a50",
   },
   h2: {
-    fontSize: "18px",
-    fontWeight: 600,
+    fontSize: "22px",
+    fontFamily: "var(--font-heading), Georgia, serif",
+    fontWeight: 500,
     marginBottom: "12px",
-    color: "#202124",
+    color: "#6b3a50",
   },
   h3: {
-    fontSize: "16px",
-    fontWeight: 600,
+    fontSize: "18px",
+    fontFamily: "var(--font-heading), Georgia, serif",
+    fontWeight: 500,
     marginBottom: "8px",
-    color: "#202124",
+    color: "#6b3a50",
   },
   imageWrapper: {
     margin: "16px 0",
@@ -144,7 +147,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   hr: {
     border: "none",
-    borderTop: "1px solid #dadce0",
+    borderTop: "1px solid #f0c4d4",
     margin: "20px 0",
   },
   htmlBlock: {
@@ -157,33 +160,34 @@ const styles: Record<string, React.CSSProperties> = {
     margin: "12px 0",
   },
   guestbookEntry: {
-    border: "1px solid #dadce0",
+    border: "1px solid #f0c4d4",
     borderRadius: "8px",
     padding: "12px 16px",
-    background: "#f8f9fa",
+    background: "#fef0f4",
   },
   guestbookHeader: {
     display: "flex",
     justifyContent: "space-between",
     marginBottom: "4px",
     fontSize: "13px",
+    color: "#6b3a50",
   },
   guestbookDate: {
-    color: "#9aa0a6",
+    color: "#b8a0aa",
     fontSize: "12px",
   },
   guestbookMessage: {
     fontSize: "13px",
-    color: "#5f6368",
+    color: "#907880",
   },
   visitorCounter: {
     margin: "8px 0",
     padding: "6px 12px",
-    background: "#f1f3f4",
+    background: "#fce8ef",
     borderRadius: "4px",
     display: "inline-block",
     fontSize: "13px",
-    color: "#5f6368",
+    color: "#a0607a",
   },
   counterLabel: {
     fontSize: "13px",
@@ -198,11 +202,11 @@ const styles: Record<string, React.CSSProperties> = {
   errorTitle: {
     fontSize: "48px",
     fontWeight: 200,
-    color: "#202124",
+    color: "#6b3a50",
     marginBottom: "16px",
   },
   errorText: {
-    color: "#5f6368",
+    color: "#a0607a",
     fontSize: "14px",
   },
 };
