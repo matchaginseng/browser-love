@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Familjen_Grotesk, Cormorant_Garamond } from "next/font/google";
+import { Familjen_Grotesk, Tiny5 } from "next/font/google";
 import "./globals.css";
 import { BrowserProvider } from "@/context/BrowserContext";
 
@@ -9,9 +9,9 @@ const familjenGrotesk = Familjen_Grotesk({
   display: "swap",
 });
 
-const cormorantGaramond = Cormorant_Garamond({
+const tiny5 = Tiny5({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400"],
   variable: "--font-heading",
   display: "swap",
 });
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${familjenGrotesk.variable} ${cormorantGaramond.variable}`}
+      className={`${familjenGrotesk.variable} ${tiny5.variable}`}
     >
       <body>
         <BrowserProvider>{children}</BrowserProvider>
