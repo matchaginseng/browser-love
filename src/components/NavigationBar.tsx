@@ -17,27 +17,33 @@ export default function NavigationBar() {
     <div style={styles.navBar}>
       <div style={styles.buttons}>
         <button
-          className="win98-button"
+          style={{
+            ...styles.navBtn,
+            ...(!back ? styles.navBtnDisabled : {}),
+          }}
           disabled={!back}
           onClick={() => dispatch({ type: "GO_BACK" })}
           aria-label="Back"
         >
-          ◀ Back
+          &#8592;
         </button>
         <button
-          className="win98-button"
+          style={{
+            ...styles.navBtn,
+            ...(!forward ? styles.navBtnDisabled : {}),
+          }}
           disabled={!forward}
           onClick={() => dispatch({ type: "GO_FORWARD" })}
           aria-label="Forward"
         >
-          Forward ▶
+          &#8594;
         </button>
         <button
-          className="win98-button"
+          style={styles.navBtn}
           onClick={() => dispatch({ type: "GO_HOME" })}
           aria-label="Home"
         >
-          🏠 Home
+          &#8962;
         </button>
       </div>
       <UrlBar keywords={keywords} />
@@ -50,14 +56,30 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     alignItems: "center",
     gap: "8px",
-    padding: "4px 6px",
-    background: "#c0c0c0",
-    borderBottom: "2px solid",
-    borderBottomColor: "#808080",
+    padding: "6px 8px",
+    background: "#35363a",
   },
   buttons: {
     display: "flex",
-    gap: "4px",
+    gap: "2px",
     flexShrink: 0,
+  },
+  navBtn: {
+    width: "32px",
+    height: "32px",
+    border: "none",
+    background: "transparent",
+    color: "#e8eaed",
+    fontSize: "18px",
+    cursor: "pointer",
+    borderRadius: "50%",
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "center",
+    fontFamily: "inherit",
+  },
+  navBtnDisabled: {
+    color: "#5f6368",
+    cursor: "default",
   },
 };

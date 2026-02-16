@@ -14,8 +14,10 @@ export default function PageRenderer({ pageId }: PageRendererProps) {
   if (!page) {
     return (
       <div style={styles.error}>
-        <h1 style={styles.errorTitle}>404 - Page Not Found</h1>
-        <p>The page &quot;{pageId}&quot; could not be found on this server.</p>
+        <h1 style={styles.errorTitle}>404</h1>
+        <p style={styles.errorText}>
+          The page &quot;{pageId}&quot; could not be found.
+        </p>
       </div>
     );
   }
@@ -86,7 +88,7 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
     case "visitor_counter":
       return (
         <div style={styles.visitorCounter}>
-          <span style={styles.counterLabel}>You are visitor #</span>
+          <span style={styles.counterLabel}>Visitors: </span>
           <span style={styles.counterNumber}>
             {block.count.toLocaleString()}
           </span>
@@ -100,44 +102,50 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
 
 const styles: Record<string, React.CSSProperties> = {
   page: {
-    padding: "16px",
+    padding: "24px 32px",
+    maxWidth: "800px",
   },
   paragraph: {
     marginBottom: "12px",
-    lineHeight: 1.6,
+    lineHeight: 1.7,
+    color: "#202124",
+    fontSize: "14px",
   },
   h1: {
     fontSize: "24px",
-    marginBottom: "12px",
-    textAlign: "center" as const,
+    fontWeight: 400,
+    marginBottom: "16px",
+    color: "#202124",
   },
   h2: {
-    fontSize: "20px",
-    marginBottom: "8px",
+    fontSize: "18px",
+    fontWeight: 600,
+    marginBottom: "12px",
+    color: "#202124",
   },
   h3: {
-    fontSize: "18px",
-    marginBottom: "6px",
+    fontSize: "16px",
+    fontWeight: 600,
+    marginBottom: "8px",
+    color: "#202124",
   },
   imageWrapper: {
-    textAlign: "center" as const,
-    margin: "12px 0",
+    margin: "16px 0",
   },
   image: {
     maxWidth: "100%",
-    imageRendering: "pixelated" as const,
+    borderRadius: "4px",
   },
   linkGroup: {
     margin: "12px 0",
     display: "flex",
     flexDirection: "column" as const,
-    gap: "4px",
+    gap: "6px",
   },
   hr: {
     border: "none",
-    borderTop: "2px solid #808080",
-    borderBottom: "2px solid #ffffff",
-    margin: "16px 0",
+    borderTop: "1px solid #dadce0",
+    margin: "20px 0",
   },
   htmlBlock: {
     margin: "12px 0",
@@ -145,49 +153,56 @@ const styles: Record<string, React.CSSProperties> = {
   guestbook: {
     display: "flex",
     flexDirection: "column" as const,
-    gap: "12px",
+    gap: "8px",
     margin: "12px 0",
   },
   guestbookEntry: {
-    border: "1px solid #808080",
-    padding: "8px",
-    background: "#f0f0f0",
+    border: "1px solid #dadce0",
+    borderRadius: "8px",
+    padding: "12px 16px",
+    background: "#f8f9fa",
   },
   guestbookHeader: {
     display: "flex",
     justifyContent: "space-between",
     marginBottom: "4px",
-    fontSize: "14px",
+    fontSize: "13px",
   },
   guestbookDate: {
-    color: "#808080",
+    color: "#9aa0a6",
     fontSize: "12px",
   },
   guestbookMessage: {
-    fontSize: "14px",
+    fontSize: "13px",
+    color: "#5f6368",
   },
   visitorCounter: {
-    textAlign: "center" as const,
     margin: "8px 0",
-    padding: "4px 12px",
-    background: "#000000",
-    color: "#00ff00",
+    padding: "6px 12px",
+    background: "#f1f3f4",
+    borderRadius: "4px",
     display: "inline-block",
-    border: "2px solid #808080",
+    fontSize: "13px",
+    color: "#5f6368",
   },
   counterLabel: {
-    fontSize: "14px",
+    fontSize: "13px",
   },
   counterNumber: {
-    fontSize: "16px",
-    fontWeight: "bold",
+    fontWeight: 600,
   },
   error: {
-    padding: "32px",
+    padding: "64px 32px",
     textAlign: "center" as const,
   },
   errorTitle: {
-    fontSize: "24px",
+    fontSize: "48px",
+    fontWeight: 200,
+    color: "#202124",
     marginBottom: "16px",
+  },
+  errorText: {
+    color: "#5f6368",
+    fontSize: "14px",
   },
 };

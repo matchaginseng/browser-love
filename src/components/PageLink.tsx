@@ -35,7 +35,7 @@ export default function PageLink({ link }: PageLinkProps) {
 const styles: Record<string, React.CSSProperties> = {
   link: {
     display: "block",
-    padding: "4px 0",
-    fontSize: "16px",
+    padding: "3px 0",
+    fontSize: "14px",
   },
 };

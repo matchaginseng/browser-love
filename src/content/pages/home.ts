@@ -52,11 +52,11 @@ export const homePage: PageDefinition = {
       ],
     },
     { type: "hr" },
-    {
-      type: "html",
-      content:
-        "<marquee>Best viewed in Internet Explorer 5.0 at 800x600 resolution</marquee>",
-    },
+    // {
+    //   type: "html",
+    //   content:
+    //     "<marquee>Best viewed in Internet Explorer 5.0 at 800x600 resolution</marquee>",
+    // },
   ],
   adlibKeywords: [
     { slot: "creature", word: "web surfer" },

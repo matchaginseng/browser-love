@@ -20,8 +20,5 @@ const styles: Record<string, React.CSSProperties> = {
     flex: 1,
     overflow: "auto",
     background: "#ffffff",
-    border: "2px solid",
-    borderColor: "#808080 #ffffff #ffffff #808080",
-    boxShadow: "inset 1px 1px 0 #000000, inset -1px -1px 0 #dfdfdf",
   },
 };

@@ -13,14 +13,14 @@ export default function Sidebar() {
         style={styles.toggle}
         aria-label={state.sidebarOpen ? "Close sidebar" : "Open sidebar"}
       >
-        {state.sidebarOpen ? "◀" : "▶"}
-        <span style={styles.toggleLabel}>History</span>
+        <span style={styles.toggleIcon}>
+          {state.sidebarOpen ? "\u276E" : "\u276F"}
+        </span>
       </button>
       {state.sidebarOpen && (
         <div style={styles.sidebar}>
           <div style={styles.header}>
-            <span style={styles.headerIcon}>📋</span>
-            <strong>Click History</strong>
+            <strong>History</strong>
           </div>
           <div style={styles.list}>
             {[...state.clickHistory].reverse().map((entry, i) => {
@@ -59,66 +59,58 @@ const styles: Record<string, React.CSSProperties> = {
     top: "50%",
     transform: "translateY(-50%)",
     zIndex: 10,
-    background: "#c0c0c0",
-    border: "2px solid",
-    borderColor: "#ffffff #000000 #000000 #ffffff",
+    background: "#f1f3f4",
+    border: "1px solid #dadce0",
     borderLeft: "none",
-    padding: "8px 2px",
+    borderRadius: "0 8px 8px 0",
+    padding: "12px 4px",
     cursor: "pointer",
-    fontSize: "10px",
+    fontSize: "12px",
     fontFamily: "inherit",
+    color: "#5f6368",
     display: "flex",
-    flexDirection: "column" as const,
     alignItems: "center",
-    gap: "2px",
-    writingMode: "vertical-lr" as React.CSSProperties["writingMode"],
   },
-  toggleLabel: {
-    fontSize: "11px",
-    letterSpacing: "1px",
+  toggleIcon: {
+    fontSize: "10px",
   },
   sidebar: {
-    width: "200px",
-    background: "#c0c0c0",
-    borderRight: "2px solid",
-    borderRightColor: "#808080",
+    width: "240px",
+    background: "#f8f9fa",
+    borderRight: "1px solid #dadce0",
     display: "flex",
     flexDirection: "column" as const,
     flexShrink: 0,
     overflow: "hidden",
   },
   header: {
-    padding: "6px 8px",
-    borderBottom: "2px solid #808080",
-    display: "flex",
-    alignItems: "center",
-    gap: "4px",
+    padding: "12px 16px",
+    borderBottom: "1px solid #dadce0",
     fontSize: "14px",
-  },
-  headerIcon: {
-    fontSize: "12px",
+    color: "#202124",
   },
   list: {
     flex: 1,
     overflow: "auto",
   },
   entry: {
-    padding: "4px 8px",
+    padding: "8px 16px",
     cursor: "pointer",
-    borderBottom: "1px solid #a0a0a0",
+    borderBottom: "1px solid #f1f3f4",
     display: "flex",
     flexDirection: "column" as const,
-    fontSize: "13px",
+    gap: "2px",
+    transition: "background 0.1s",
   },
   entryTitle: {
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
-    color: "#000080",
-    textDecoration: "underline",
+    color: "#1a73e8",
+    fontSize: "13px",
   },
   entryTime: {
     fontSize: "11px",
-    color: "#808080",
+    color: "#9aa0a6",
   },
 };

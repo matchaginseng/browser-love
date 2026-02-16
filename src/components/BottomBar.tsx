@@ -14,14 +14,13 @@ export default function BottomBar() {
         style={styles.toggle}
         aria-label={state.bottomBarOpen ? "Close story" : "Open story"}
       >
-        {state.bottomBarOpen ? "▼" : "▲"} Your Story
+        <span style={styles.toggleArrow}>
+          {state.bottomBarOpen ? "\u25BC" : "\u25B2"}
+        </span>
+        <span>Your Story</span>
       </button>
       {state.bottomBarOpen && (
         <div style={styles.bar}>
-          <div style={styles.header}>
-            <span style={styles.headerIcon}>📖</span>
-            <strong>Your Adventure So Far...</strong>
-          </div>
           <div style={styles.storyContainer}>
             <p style={styles.story}>
               {segments.map((seg, i) => {
@@ -52,56 +51,48 @@ export default function BottomBar() {
 const styles: Record<string, React.CSSProperties> = {
   toggle: {
     width: "100%",
-    background: "#c0c0c0",
-    border: "2px solid",
-    borderColor: "#ffffff #000000 #000000 #ffffff",
-    borderBottom: "none",
-    padding: "2px 8px",
+    background: "#f8f9fa",
+    border: "none",
+    borderTop: "1px solid #dadce0",
+    padding: "6px 16px",
     cursor: "pointer",
     fontSize: "12px",
     fontFamily: "inherit",
     textAlign: "left" as const,
     display: "flex",
     alignItems: "center",
-    gap: "4px",
+    gap: "6px",
+    color: "#5f6368",
+  },
+  toggleArrow: {
+    fontSize: "8px",
   },
   bar: {
-    background: "#ffffcc",
-    borderTop: "2px solid #808080",
+    background: "#ffffff",
+    borderTop: "1px solid #dadce0",
     maxHeight: "160px",
     overflow: "auto",
   },
-  header: {
-    padding: "4px 8px",
-    borderBottom: "1px solid #808080",
-    display: "flex",
-    alignItems: "center",
-    gap: "4px",
-    fontSize: "13px",
-    background: "#c0c0c0",
-  },
-  headerIcon: {
-    fontSize: "12px",
-  },
   storyContainer: {
-    padding: "8px 12px",
+    padding: "12px 16px",
   },
   story: {
-    fontSize: "15px",
+    fontSize: "14px",
     lineHeight: 1.8,
+    color: "#202124",
   },
   filledSlot: {
-    background: "#00ff00",
-    color: "#000080",
-    padding: "1px 4px",
-    fontWeight: "bold",
-    border: "1px solid #008000",
+    background: "#e8f0fe",
+    color: "#1a73e8",
+    padding: "1px 6px",
+    borderRadius: "4px",
+    fontWeight: 600,
   },
   unfilledSlot: {
-    background: "#ff0",
-    color: "#808080",
-    padding: "1px 4px",
+    background: "#f1f3f4",
+    color: "#9aa0a6",
+    padding: "1px 6px",
+    borderRadius: "4px",
     fontStyle: "italic",
-    border: "1px dashed #808080",
   },
 };
