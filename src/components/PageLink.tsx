@@ -21,7 +21,7 @@ export default function PageLink({ link }: PageLinkProps) {
       onClick={(e) => {
         e.preventDefault();
         dispatch({
-          type: "OPEN_NEW_TAB",
+          type: "NAVIGATE_TO_PAGE",
           payload: { pageId: link.targetPageId },
         });
       }}

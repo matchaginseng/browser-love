@@ -1,6 +1,6 @@
 import { registerPage } from "../registry";
 import { homePage } from "./home";
-import { searchPage } from "./search";
+import { gardenPage } from "./garden";
 import { guestbookPage } from "./guestbook";
 import { webringPage } from "./webring";
 import { geocitiesPage } from "./geocities";
@@ -15,7 +15,7 @@ export function initializePages(): void {
   initialized = true;
 
   registerPage(homePage);
-  registerPage(searchPage);
+  registerPage(gardenPage);
   registerPage(guestbookPage);
   registerPage(webringPage);
   registerPage(geocitiesPage);

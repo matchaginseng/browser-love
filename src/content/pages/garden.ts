@@ -1,9 +1,9 @@
 import { PageDefinition } from "@/types";
 
-export const searchPage: PageDefinition = {
-  id: "search",
-  urlKeywords: ["search", "find", "web"],
-  tabTitle: "WebCrawler Search",
+export const gardenPage: PageDefinition = {
+  id: "garden",
+  urlKeywords: ["garden", "flower", "plants"],
+  tabTitle: "Garden",
   content: [
     {
       type: "heading",

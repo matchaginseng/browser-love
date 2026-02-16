@@ -15,13 +15,17 @@ export const homePage: PageDefinition = {
       type: "paragraph",
       text: "Or, my corner of it anyway. I hope you enjoy your stay. Click around, fall in love! ₊✩‧₊˚౨ৎ˚₊✩‧₊",
     },
+    {
+      type: "paragraph",
+      text: "By the way, the order that you click matters.",
+    },
     { type: "hr" },
     {
       type: "link_group",
       links: [
         {
-          label: ">> Search the Web <<",
-          targetPageId: "search",
+          label: ">> Garden ₊˚ʚ 🌱 ₊˚✧ ﾟ. <<",
+          targetPageId: "garden",
           conditions: [{ type: "always" }],
         },
         {

@@ -86,19 +86,22 @@ export function browserReducer(
     case "OPEN_NEW_TAB": {
       const { pageId } = action.payload;
 
-      // If a tab is already showing this page, switch to it instead
-      const existingTab = state.tabs.find(
-        (t) => t.currentPageId === pageId,
-      );
-      if (existingTab) {
-        return {
-          ...state,
-          activeTabId: existingTab.id,
-          clickHistory: [
-            ...state.clickHistory,
-            { pageId, timestamp: Date.now() },
-          ],
-        };
+      // Home page always opens a fresh tab (for the + button)
+      // For other pages, switch to an existing tab if one is showing it
+      if (pageId !== "home") {
+        const existingTab = state.tabs.find(
+          (t) => t.currentPageId === pageId,
+        );
+        if (existingTab) {
+          return {
+            ...state,
+            activeTabId: existingTab.id,
+            clickHistory: [
+              ...state.clickHistory,
+              { pageId, timestamp: Date.now() },
+            ],
+          };
+        }
       }
 
       const newTabId = generateTabId();
