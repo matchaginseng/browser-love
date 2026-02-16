@@ -1,9 +1,9 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import { useBrowser } from "@/context/useBrowser";
 
-const EMOJI_ROWS = [
+const DECOR_EMOJIS = [
   "˚˖𓍢ִִ໋🌼🧺˚˖𓍢ִ🌿˚.",
   "༄˖°.🍃.ೃ࿔*:･",
   "𖡼.𖤣𖥧 𖠿 𖡼.𖤣𖥧",
@@ -23,6 +23,15 @@ interface Seed {
   flower: string;
 }
 
+interface Decor {
+  id: number;
+  x: number;
+  y: number;
+  text: string;
+  rotation: number;
+  scale: number;
+}
+
 function generateSeeds(): Seed[] {
   const count = Math.floor(Math.random() * 10) + 1;
   const seeds: Seed[] = [];
@@ -38,9 +47,21 @@ function generateSeeds(): Seed[] {
   return seeds;
 }
 
+function generateDecor(): Decor[] {
+  return DECOR_EMOJIS.map((text, i) => ({
+    id: i,
+    x: Math.random() * 80 + 5,
+    y: Math.random() * 75 + 10,
+    text,
+    rotation: Math.random() * 30 - 15,
+    scale: 0.7 + Math.random() * 0.5,
+  }));
+}
+
 export default function GardenGame() {
   const { dispatch } = useBrowser();
   const [seeds, setSeeds] = useState<Seed[]>(() => generateSeeds());
+  const decor = useMemo(() => generateDecor(), []);
 
   const growSeed = useCallback(
     (id: number) => {
@@ -58,17 +79,22 @@ export default function GardenGame() {
 
   return (
     <div style={styles.garden}>
-      <div style={styles.emojiDecor}>
-        {EMOJI_ROWS.map((row, i) => (
-          <div key={i} style={styles.emojiRow}>
-            {row}
-          </div>
-        ))}
-      </div>
-
       <div style={styles.seedBed}>
         <p style={styles.instruction}>water the seeds 💦</p>
         <div style={styles.field}>
+          {decor.map((d) => (
+            <span
+              key={`decor-${d.id}`}
+              style={{
+                ...styles.decorEmoji,
+                left: `${d.x}%`,
+                top: `${d.y}%`,
+                transform: `translate(-50%, -50%) rotate(${d.rotation}deg) scale(${d.scale})`,
+              }}
+            >
+              {d.text}
+            </span>
+          ))}
           {seeds.map((seed) => (
             <span
               key={seed.id}
@@ -100,21 +126,6 @@ const styles: Record<string, React.CSSProperties> = {
     cursor:
       "url(\"data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32'><text y='24' font-size='24'>💦</text></svg>\") 16 16, auto",
   },
-  emojiDecor: {
-    display: "flex",
-    flexDirection: "column" as const,
-    alignItems: "center",
-    gap: "8px",
-    margin: "16px 0",
-    fontSize: "16px",
-    lineHeight: 1.8,
-    color: "#a0607a",
-    opacity: 0.7,
-  },
-  emojiRow: {
-    textAlign: "center" as const,
-    letterSpacing: "2px",
-  },
   seedBed: {
     margin: "24px 0",
   },
@@ -133,11 +144,21 @@ const styles: Record<string, React.CSSProperties> = {
     border: "1px solid #f0c4d4",
     overflow: "hidden",
   },
+  decorEmoji: {
+    position: "absolute" as const,
+    fontSize: "13px",
+    opacity: 0.45,
+    pointerEvents: "none" as const,
+    userSelect: "none" as const,
+    whiteSpace: "nowrap" as const,
+    color: "#a0607a",
+  },
   seed: {
     position: "absolute" as const,
     cursor: "inherit",
     userSelect: "none" as const,
     transform: "translate(-50%, -50%)",
+    zIndex: 1,
   },
   complete: {
     textAlign: "center" as const,

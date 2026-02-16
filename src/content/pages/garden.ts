@@ -7,7 +7,7 @@ export const gardenPage: PageDefinition = {
   content: [
     {
       type: "heading",
-      text: "my garden",
+      text: "my garden ༉˚.",
       level: 1,
     },
     {
