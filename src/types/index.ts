@@ -9,6 +9,7 @@ export interface LinkCondition {
     | "visited"
     | "not_visited"
     | "visited_count_gte"
+    | "click_count_gte"
     | "has_keyword"
     | "tab_count_gte"
     | "always";

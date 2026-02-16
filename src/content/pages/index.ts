@@ -5,6 +5,8 @@ import { guestbookPage } from "./guestbook";
 import { webringPage } from "./webring";
 import { geocitiesPage } from "./geocities";
 import { chatroomPage } from "./chatroom";
+import { midiPage } from "./midi";
+import { ftpPage } from "./ftp";
 
 let initialized = false;
 
@@ -18,4 +20,6 @@ export function initializePages(): void {
   registerPage(webringPage);
   registerPage(geocitiesPage);
   registerPage(chatroomPage);
+  registerPage(midiPage);
+  registerPage(ftpPage);
 }

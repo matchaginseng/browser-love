@@ -24,6 +24,12 @@ export function evaluateCondition(
       return visitCount >= condition.value;
     }
 
+    case "click_count_gte":
+      return (
+        condition.value != null &&
+        state.clickHistory.length >= condition.value
+      );
+
     case "has_keyword":
       return condition.target != null && condition.target in state.adlibSlots;
 

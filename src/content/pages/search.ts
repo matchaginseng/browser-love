@@ -43,6 +43,16 @@ export const searchPage: PageDefinition = {
           targetPageId: "guestbook",
           conditions: [{ type: "always" }],
         },
+        {
+          label: "5. MIDI Music Archive - Free Downloads!",
+          targetPageId: "midi",
+          conditions: [{ type: "click_count_gte", value: 5 }],
+        },
+        {
+          label: "6. FTP File Archive [NEW]",
+          targetPageId: "ftp",
+          conditions: [{ type: "click_count_gte", value: 8 }],
+        },
       ],
     },
     { type: "hr" },

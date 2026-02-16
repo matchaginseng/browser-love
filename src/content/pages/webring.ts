@@ -43,6 +43,16 @@ export const webringPage: PageDefinition = {
           targetPageId: "home",
           conditions: [{ type: "always" }],
         },
+        {
+          label: "[NEW!] MIDI Music Archive",
+          targetPageId: "midi",
+          conditions: [{ type: "click_count_gte", value: 5 }],
+        },
+        {
+          label: "[SECRET] FTP File Server",
+          targetPageId: "ftp",
+          conditions: [{ type: "click_count_gte", value: 8 }],
+        },
       ],
     },
     { type: "hr" },

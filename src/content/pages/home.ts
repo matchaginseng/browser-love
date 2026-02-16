@@ -44,6 +44,11 @@ export const homePage: PageDefinition = {
           targetPageId: "chatroom",
           conditions: [{ type: "visited", target: "guestbook" }],
         },
+        {
+          label: ">> FREE MIDI Files!! <<",
+          targetPageId: "midi",
+          conditions: [{ type: "click_count_gte", value: 5 }],
+        },
       ],
     },
     { type: "hr" },

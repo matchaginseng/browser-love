@@ -52,6 +52,11 @@ export const geocitiesPage: PageDefinition = {
           targetPageId: "search",
           conditions: [{ type: "always" }],
         },
+        {
+          label: ">> My MIDI Page!! <<",
+          targetPageId: "midi",
+          conditions: [{ type: "click_count_gte", value: 5 }],
+        },
       ],
     },
     { type: "hr" },
