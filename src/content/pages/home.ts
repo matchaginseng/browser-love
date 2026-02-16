@@ -13,7 +13,7 @@ export const homePage: PageDefinition = {
     { type: "visitor_counter", count: 13482 },
     {
       type: "paragraph",
-      text: "You have reached the INFORMATION SUPERHIGHWAY. Where would you like to go today?",
+      text: "Or, my corner of it anyway. I hope you enjoy your stay. Click around, fall in love! ₊✩‧₊˚౨ৎ˚₊✩‧₊",
     },
     { type: "hr" },
     {
