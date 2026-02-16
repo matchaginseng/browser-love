@@ -13,8 +13,8 @@
   --chrome-accent: #f8a4c0;
   --chrome-white: #ffffff;
   --chrome-content-bg: #fff5f8;
-  --chrome-link: #eb80ff;
-  --chrome-link-hover: #d966f0;
+  --chrome-link: #d4839e;
+  --chrome-link-hover: #c06e8a;
 
   font-family: var(--font-familjen), -apple-system, BlinkMacSystemFont,
     "Segoe UI", Roboto, sans-serif;

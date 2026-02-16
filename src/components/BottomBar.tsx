@@ -62,7 +62,7 @@ const styles: Record<string, React.CSSProperties> = {
     display: "flex",
     alignItems: "center",
     gap: "6px",
-    color: "#a0607a",
+    color: "#d4839e",
   },
   toggleArrow: {
     fontSize: "8px",
@@ -83,7 +83,7 @@ const styles: Record<string, React.CSSProperties> = {
   },
   filledSlot: {
     background: "#fce0e8",
-    color: "#eb80ff",
+    color: "#d4839e",
     padding: "1px 6px",
     borderRadius: "4px",
     fontWeight: 600,

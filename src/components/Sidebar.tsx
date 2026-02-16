@@ -68,7 +68,7 @@ const styles: Record<string, React.CSSProperties> = {
     cursor: "pointer",
     fontSize: "12px",
     fontFamily: "inherit",
-    color: "#a0607a",
+    color: "#d4839e",
     display: "flex",
     alignItems: "center",
   },
@@ -114,7 +114,7 @@ const styles: Record<string, React.CSSProperties> = {
     overflow: "hidden",
     textOverflow: "ellipsis",
     whiteSpace: "nowrap",
-    color: "#eb80ff",
+    color: "#d4839e",
     fontSize: "13px",
   },
   entryTime: {
