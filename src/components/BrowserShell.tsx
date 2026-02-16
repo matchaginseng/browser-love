@@ -6,6 +6,7 @@ import NavigationBar from "./NavigationBar";
 import Viewport from "./Viewport";
 import Sidebar from "./Sidebar";
 import BottomBar from "./BottomBar";
+import LoveCounter from "./LoveCounter";
 
 initializePages();
 
@@ -18,6 +19,7 @@ export default function BrowserShell() {
         <div style={styles.contentArea}>
           <Sidebar />
           <Viewport />
+          <LoveCounter />
         </div>
         <BottomBar />
       </div>

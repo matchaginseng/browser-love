@@ -34,7 +34,8 @@ export type ContentBlock =
       type: "guestbook";
       entries: Array<{ name: string; message: string; date: string }>;
     }
-  | { type: "visitor_counter"; count: number };
+  | { type: "visitor_counter"; count: number }
+  | { type: "garden" };
 
 // ─── Ad-Lib Types ───
 
@@ -73,6 +74,7 @@ export interface BrowserState {
   clickHistory: Array<{ pageId: PageId; timestamp: number }>;
   visitedPages: Record<PageId, true>;
   adlibSlots: Record<string, string>;
+  lovePoints: number;
   sidebarOpen: boolean;
   bottomBarOpen: boolean;
 }

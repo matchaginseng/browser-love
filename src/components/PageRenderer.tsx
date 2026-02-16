@@ -2,7 +2,9 @@
 
 import { PageId, ContentBlock } from "@/types";
 import { getPageDefinition } from "@/content/registry";
+import { useBrowser } from "@/context/useBrowser";
 import PageLink from "./PageLink";
+import GardenGame from "./GardenGame";
 
 interface PageRendererProps {
   pageId: PageId;
@@ -10,6 +12,7 @@ interface PageRendererProps {
 
 export default function PageRenderer({ pageId }: PageRendererProps) {
   const page = getPageDefinition(pageId);
+  const { state } = useBrowser();
 
   if (!page) {
     return (
@@ -22,16 +25,27 @@ export default function PageRenderer({ pageId }: PageRendererProps) {
     );
   }
 
+  // Use visit count as key so garden regenerates each visit
+  const gardenKey = state.clickHistory.filter(
+    (h) => h.pageId === "garden",
+  ).length;
+
   return (
     <div style={styles.page}>
       {page.content.map((block, i) => (
-        <ContentBlockRenderer key={i} block={block} />
+        <ContentBlockRenderer key={i} block={block} gardenKey={gardenKey} />
       ))}
     </div>
   );
 }
 
-function ContentBlockRenderer({ block }: { block: ContentBlock }) {
+function ContentBlockRenderer({
+  block,
+  gardenKey,
+}: {
+  block: ContentBlock;
+  gardenKey: number;
+}) {
   switch (block.type) {
     case "paragraph":
       return <p style={styles.paragraph}>{block.text}</p>;
@@ -84,6 +98,9 @@ function ContentBlockRenderer({ block }: { block: ContentBlock }) {
           ))}
         </div>
       );
+
+    case "garden":
+      return <GardenGame key={gardenKey} />;
 
     case "visitor_counter":
       return (

@@ -12,7 +12,8 @@ export type BrowserAction =
   | { type: "GO_FORWARD" }
   | { type: "GO_HOME" }
   | { type: "TOGGLE_SIDEBAR" }
-  | { type: "TOGGLE_BOTTOM_BAR" };
+  | { type: "TOGGLE_BOTTOM_BAR" }
+  | { type: "ADD_LOVE_POINTS"; payload: { amount: number } };
 
 function generateTabId(): string {
   return `tab-${Date.now()}-${Math.random().toString(36).substring(2, 9)}`;
@@ -80,6 +81,7 @@ export function browserReducer(
         ],
         visitedPages: { ...state.visitedPages, [pageId]: true as const },
         adlibSlots: collectAdlibKeywords(state.adlibSlots, pageId),
+        lovePoints: state.lovePoints - 1,
       };
     }
 
@@ -226,6 +228,13 @@ export function browserReducer(
 
     case "TOGGLE_BOTTOM_BAR": {
       return { ...state, bottomBarOpen: !state.bottomBarOpen };
+    }
+
+    case "ADD_LOVE_POINTS": {
+      return {
+        ...state,
+        lovePoints: state.lovePoints + action.payload.amount,
+      };
     }
 
     default:

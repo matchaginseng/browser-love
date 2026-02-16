@@ -13,18 +13,18 @@ export const homePage: PageDefinition = {
     { type: "visitor_counter", count: 13482 },
     {
       type: "paragraph",
-      text: "Or, my corner of it anyway. I hope you enjoy your stay. Click around, fall in love! ₊✩‧₊˚౨ৎ˚₊✩‧₊",
+      text: "Or, my corner of it anyway.",
     },
     {
       type: "paragraph",
-      text: "By the way, the order that you click matters.",
+      text: "Click around, fall in love! ₊✩‧₊˚౨ৎ˚₊✩‧₊ By the way, the order that you click matters.",
     },
     { type: "hr" },
     {
       type: "link_group",
       links: [
         {
-          label: ">> Garden ₊˚ʚ 🌱 ₊˚✧ ﾟ. <<",
+          label: ">> garden ₊˚ʚ 🌱 ₊˚✧ ﾟ. <<",
           targetPageId: "garden",
           conditions: [{ type: "always" }],
         },

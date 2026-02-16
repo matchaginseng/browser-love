@@ -27,6 +27,7 @@ const initialState: BrowserState = {
   clickHistory: [{ pageId: HOME_PAGE_ID, timestamp: Date.now() }],
   visitedPages: { [HOME_PAGE_ID]: true },
   adlibSlots: {},
+  lovePoints: 10,
   sidebarOpen: false,
   bottomBarOpen: false,
 };
